@@ -50,6 +50,124 @@ export default init => {
 
     /**
       * ------------------------------------
+      * Cities
+      * ------------------------------------
+      */
+    class Cities extends Sequelize.Model{}
+    Cities.init({
+        _id: { 
+          type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      
+      CityName: {
+          type: Sequelize.STRING, 
+        allowNull: false
+      },
+      
+      // RELATIONS
+        
+      CityName:  {
+          type: Sequelize.INTEGER,
+        references: {
+            model: "UserProfiles",
+          key: '_id',
+        },
+      }
+      
+      
+      // EXTERNAL RELATIONS
+      /*
+      */
+
+      // FACTOM BLOCKCHAIN
+    },
+      { sequelize, tableName: "cities", timestamps: false }
+    );
+
+
+
+    /**
+      * ------------------------------------
+      * Maritalstatus
+      * ------------------------------------
+      */
+    class Maritalstatus extends Sequelize.Model{}
+    Maritalstatus.init({
+        _id: { 
+          type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      
+      Maritalstatus: {
+          type: Sequelize.STRING
+      },
+      
+      // RELATIONS
+        
+      MartialStatus:  {
+          type: Sequelize.INTEGER,
+        references: {
+            model: "UserProfiles",
+          key: '_id',
+        },
+      }
+      
+      
+      // EXTERNAL RELATIONS
+      /*
+      */
+
+      // FACTOM BLOCKCHAIN
+    },
+      { sequelize, tableName: "maritalstatus", timestamps: false }
+    );
+
+
+
+    /**
+      * ------------------------------------
+      * States
+      * ------------------------------------
+      */
+    class States extends Sequelize.Model{}
+    States.init({
+        _id: { 
+          type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      
+      Name: {
+          type: Sequelize.STRING
+      },
+      
+      // RELATIONS
+        
+      currentState:  {
+          type: Sequelize.INTEGER,
+        references: {
+            model: "UserProfiles",
+          key: '_id',
+        },
+      }
+      
+      
+      // EXTERNAL RELATIONS
+      /*
+      */
+
+      // FACTOM BLOCKCHAIN
+    },
+      { sequelize, tableName: "states", timestamps: false }
+    );
+
+
+
+    /**
+      * ------------------------------------
       * User
       * ------------------------------------
       */
@@ -110,9 +228,41 @@ export default init => {
         autoIncrement: true
       },
       
+      AgeofEldestChild: {
+          type: Sequelize.FLOAT
+      },
+      
+      BirthPlace: {
+          type: Sequelize.STRING
+      },
+      
+      BirthYear: {
+          type: Sequelize.FLOAT
+      },
+      
+      Budget: {
+          type: Sequelize.FLOAT
+      },
+      
+      Company: {
+          type: Sequelize.STRING
+      },
+      
+      Complexion: {
+          type: Sequelize.STRING
+      },
+      
+      ContactNumber: {
+          type: Sequelize.FLOAT
+      },
+      
       CurrentCity: {
           type: Sequelize.STRING, 
         allowNull: false
+      },
+      
+      CurrentState: {
+          type: Sequelize.STRING
       },
       
       DOB: {
@@ -120,16 +270,113 @@ export default init => {
         allowNull: false
       },
       
+      Degree: {
+          type: Sequelize.STRING
+      },
+      
+      DegreePlace: {
+          type: Sequelize.STRING
+      },
+      
+      Education: {
+          type: Sequelize.STRING
+      },
+      
       FIrstName: {
           type: Sequelize.STRING, 
         allowNull: false
+      },
+      
+      Familytype: {
+          type: Sequelize.STRING
+      },
+      
+      Father: {
+          type: Sequelize.STRING
+      },
+      
+      FatherOccupation: {
+          type: Sequelize.STRING
       },
       
       Gotra: {
           type: Sequelize.STRING
       },
       
+      Grandfather: {
+          type: Sequelize.STRING
+      },
+      
+      Height: {
+          type: Sequelize.DECIMAL
+      },
+      
       LastName: {
+          type: Sequelize.STRING
+      },
+      
+      Manglikstatus: {
+          type: Sequelize.BOOLEAN
+      },
+      
+      Maritalstatus: {
+          type: Sequelize.STRING, 
+        allowNull: false
+      },
+      
+      MotherName: {
+          type: Sequelize.STRING
+      },
+      
+      MotherTounge: {
+          type: Sequelize.STRING
+      },
+      
+      MothersOccupation: {
+          type: Sequelize.STRING
+      },
+      
+      NumberOfChilderen: {
+          type: Sequelize.FLOAT
+      },
+      
+      NumberofBrothers: {
+          type: Sequelize.FLOAT
+      },
+      
+      NumberofMarriedBrothers: {
+          type: Sequelize.FLOAT
+      },
+      
+      NumberofMarriedBrothers: {
+          type: Sequelize.FLOAT
+      },
+      
+      NumberofSisters: {
+          type: Sequelize.FLOAT
+      },
+      
+      Occupation: {
+          type: Sequelize.STRING
+      },
+      
+      Package: {
+          type: Sequelize.FLOAT
+      },
+      
+      PermanentAddress: {
+          type: Sequelize.STRING
+      },
+      
+      Physicalstatus: {
+          type: Sequelize.STRING
+      },
+      
+      Preferences: {
+          type: Sequelize.STRING
+      },
+      
+      RelationWithContactPerson: {
           type: Sequelize.STRING
       },
       
@@ -137,11 +384,39 @@ export default init => {
           type: Sequelize.DECIMAL
       },
       
+      Weight: {
+          type: Sequelize.FLOAT
+      },
+      
       // RELATIONS
+        
+        
+        
       
       
       // EXTERNAL RELATIONS
       /*
+      CityName: {
+          type: Sequelize.INTEGER,
+        references: {
+            model: Cities,
+          key: '_id',
+        }
+      },
+      MartialStatus: {
+          type: Sequelize.INTEGER,
+        references: {
+            model: Maritalstatus,
+          key: '_id',
+        }
+      },
+      currentState: {
+          type: Sequelize.INTEGER,
+        references: {
+            model: States,
+          key: '_id',
+        }
+      },
       */
 
       // FACTOM BLOCKCHAIN
@@ -156,6 +431,9 @@ export default init => {
       * ------------------------------------
       */
 
+    
+    
+    
     
     
   /**

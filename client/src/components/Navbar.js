@@ -123,6 +123,30 @@ class Navbar extends React.Component {
         <List>
           {/* START LINK MENU */}
             
+           <Link to="/cities">
+            <ListItem button key="City">
+              <ListItemIcon>
+                <ArrowForwardIos />
+              </ListItemIcon>
+              <ListItemText className="menu-text" primary="City" />
+            </ListItem>
+          </Link>{" "}            
+           <Link to="/maritalstatuses">
+            <ListItem button key="Maritalstatus">
+              <ListItemIcon>
+                <ArrowForwardIos />
+              </ListItemIcon>
+              <ListItemText className="menu-text" primary="Maritalstatus" />
+            </ListItem>
+          </Link>{" "}            
+           <Link to="/stateses">
+            <ListItem button key="States">
+              <ListItemIcon>
+                <ArrowForwardIos />
+              </ListItemIcon>
+              <ListItemText className="menu-text" primary="States" />
+            </ListItem>
+          </Link>{" "}            
            <Link to="/userprofileses">
             <ListItem button key="UserProfiles">
               <ListItemIcon>

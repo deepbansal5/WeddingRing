@@ -51,6 +51,15 @@ module.exports = {
     },
     model: {
       // Start Factom model properties
+      Cities: {
+        factomized: "",
+      },
+      Maritalstatus: {
+        factomized: "",
+      },
+      States: {
+        factomized: "",
+      },
       User: {
         factomized: "",
       },

@@ -40,6 +40,12 @@ import Paper from "@material-ui/core/Paper";
 
 /* START MY VIEWS IMPORT */
 
+import CitiesEdit from "./pages/CitiesEdit";
+import CityList from "./pages/CityList";
+import Marital Status Edit from "./pages/Marital Status Edit";
+import MaritalstatusList from "./pages/MaritalstatusList";
+import StatesEdit from "./pages/StatesEdit";
+import StatesList from "./pages/StatesList";
 import UserProfilesEdit from "./pages/UserProfilesEdit";
 import UserProfilesList from "./pages/UserProfilesList";
 
@@ -71,8 +77,14 @@ class Routes extends Component {
 
               {/* START MY VIEWS */}
 
-              <PrivateRoute exact path="/userprofileses/:id" component={ UserProfilesEdit }  />
-              <PrivateRoute exact path="/userprofileses" component={ UserProfilesList }  />
+              <Route exact path="/citieses/:id" component={ CitiesEdit }  />
+              <Route exact path="/cities" component={ CityList }  />
+              <Route exact path="/maritalstatus/:id" component={ Marital Status Edit }  />
+              <Route exact path="/maritalstatuses" component={ MaritalstatusList }  />
+              <Route exact path="/stateses/:id" component={ StatesEdit }  />
+              <Route exact path="/stateses" component={ StatesList }  />
+              <Route exact path="/userprofileses/:id" component={ UserProfilesEdit }  />
+              <Route exact path="/userprofileses" component={ UserProfilesList }  />
 
              {/* END MY VIEWS */}
 
